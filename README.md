@@ -1,5 +1,5 @@
 
-![Logo](https://github.com/tomiangeletti/ayed2/blob/main/assets/Algoritmos%20y%20Estructuras%20de%20datos.png?raw=true)
+![Logo](https://github.com/tomiangeletti/ayed2/blob/main/assets/AYED%20BANNER.png?raw=true)
 
 
 ## Algoritmos y Estructuras de Datos
