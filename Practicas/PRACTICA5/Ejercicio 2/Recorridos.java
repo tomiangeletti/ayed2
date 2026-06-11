@@ -19,8 +19,7 @@ public class Recorridos<T> {
         return resultado;
     }
 
-    private void dfsRecursivo(Graph<T> grafo, Vertex<T> actual,
-                               boolean[] visitados, List<T> resultado) {
+    private void dfsRecursivo(Graph<T> grafo, Vertex<T> actual, boolean[] visitados, List<T> resultado) {
         visitados[actual.getPosition()] = true;
         System.out.println("Visito: " + actual.getData());
         resultado.add(actual.getData());
