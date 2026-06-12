@@ -121,4 +121,47 @@ public class caminos {
         }
         return false;
     }
+
+    // Ejercicio 3.4
+    public List<String> devolverCaminoMasCorto(String ciudad1, String ciudad2){
+        Vertex<String> origen = grafo.search(ciudad1);
+        Vertex<String> destino = grafo.search(ciudad2);
+        
+        if (origen == null || destino == null){
+            return new ArrayList<>();
+        }
+        boolean[] visitados = new boolean[grafo.getSize()];
+
+        return bfs(origen, destino, visitados);
+    }
+
+    private List<String> bfs(Vertex<String> origen, Vertex<String> destino, boolean[] visitados) {
+    Queue<List<String>> cola = new LinkedList<>();
+
+    List<String> caminoInicial = new ArrayList<>();
+    caminoInicial.add(origen.getData());
+    cola.add(caminoInicial);
+    visitados[origen.getPosition()] = true;
+
+    while (!cola.isEmpty()) {
+        List<String> caminoActual = cola.poll();
+        String ultimaCiudad = caminoActual.get(caminoActual.size() - 1);
+        Vertex<String> actual = grafo.search(ultimaCiudad);
+
+        if (actual.equals(destino)) {
+            return caminoActual;
+        }
+
+        for (Edge<String> arista : grafo.getEdges(actual)) {
+            Vertex<String> vecino = arista.getTarget();
+            if (!visitados[vecino.getPosition()]) {
+                visitados[vecino.getPosition()] = true;
+                List<String> nuevoCamino = new ArrayList<>(caminoActual);
+                nuevoCamino.add(vecino.getData());
+                cola.add(nuevoCamino);
+            }
+        }
+    }
+    return new ArrayList<>();
+}
 }

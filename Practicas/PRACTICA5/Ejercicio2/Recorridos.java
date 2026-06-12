@@ -1,8 +1,7 @@
-package ejercicio2;
-
-import ejercicio1.Edge;
-import ejercicio1.Graph;
-import ejercicio1.Vertex;
+package Practicas.PRACTICA5.Ejercicio2;
+import Practicas.PRACTICA5.Edge;
+import Practicas.PRACTICA5.Graph;
+import Practicas.PRACTICA5.Vertex;
 import java.util.*;
 
 public class Recorridos<T> {
@@ -25,7 +24,7 @@ public class Recorridos<T> {
         resultado.add(actual.getData());
 
         for (Edge<T> arista : grafo.getEdges(actual)) {
-            Vertex<T> vecino = arista.target();
+            Vertex<T> vecino = arista.getTarget();
             if (!visitados[vecino.getPosition()]) {
                 dfsRecursivo(grafo, vecino, visitados, resultado);
             }
@@ -48,7 +47,7 @@ public class Recorridos<T> {
                     resultado.add(actual.getData());
 
                     for (Edge<T> arista : grafo.getEdges(actual)) {
-                        Vertex<T> vecino = arista.target();
+                        Vertex<T> vecino = arista.getTarget();
                         if (!visitados[vecino.getPosition()]) {
                             visitados[vecino.getPosition()] = true;
                             cola.add(vecino);
