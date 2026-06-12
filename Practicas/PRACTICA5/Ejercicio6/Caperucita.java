@@ -1,4 +1,4 @@
-package Practicas.PRACTICA5.Ejercicio5.Ejercicio6;
+package Practicas.PRACTICA5.Ejercicio6;
 import Practicas.PRACTICA5.Edge;
 import Practicas.PRACTICA5.Graph;
 import Practicas.PRACTICA5.Vertex;
